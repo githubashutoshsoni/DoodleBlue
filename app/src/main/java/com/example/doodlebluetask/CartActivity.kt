@@ -32,8 +32,10 @@ class CartActivity : AppCompatActivity(), SoreAdapterJava.updateOrderItem {
 
             adapter.setArrayList(filteredList as ArrayList<Store>)
 
-            adapter.showTwoItems(false)
-
+            if (firstTime)
+                adapter.showTwoItems(false)
+            else
+                adapter.showTwoItems(true)
         })
 
         show_more.setOnClickListener {
@@ -46,7 +48,10 @@ class CartActivity : AppCompatActivity(), SoreAdapterJava.updateOrderItem {
 
     }
 
+    var firstTime = true;
+
     override fun updateItemAtPos(store: Store?, count: Int) {
+        firstTime = false
         viewModel.updateOrder(store!!.foodName, count)
     }
 }
