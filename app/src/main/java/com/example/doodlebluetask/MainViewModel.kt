@@ -1,40 +1,32 @@
 package com.example.doodlebluetask
 
 import android.app.Application
-import android.content.Context
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import androidx.room.Room
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
-class MainViewModel constructor(context: Application) : AndroidViewModel(context) {
-
-    lateinit var database: AppDatabase
+class MainViewModel constructor(application: Application) : AndroidViewModel(application) {
 
 
-//    var getAllList: LiveData<List<Store>> = database.cartDao().getAll()
+    var database: AppDatabase = Room.databaseBuilder(application, AppDatabase::class.java, "DB")
+        .allowMainThreadQueries().build()
 
-    init {
-        val result = Room.databaseBuilder(
-            context.applicationContext,
-            AppDatabase::class.java, "Tasks.db"
-        ).build()
-        database = result
+
+    fun updateOrder(foodName: String, count: Int) {
+        val value = database.cartDao().update(foodName, count)
+        Log.d("ViewModel", "updateOrder: $value")
+
     }
 
-    fun insertTasks(list: ArrayList<Store>) {
+    fun insertList(list: List<Store>) {
 
-        viewModelScope.launch {
-            withContext()
 
-            database.cartDao().insert(list)
+        database.cartDao().insert(list)
 
-        }
+
     }
 
+    var list: LiveData<List<Store>> = database.cartDao().getAll()
 
 }

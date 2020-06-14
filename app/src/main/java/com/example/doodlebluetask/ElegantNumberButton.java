@@ -14,6 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.material.button.MaterialButton;
+
 
 public class ElegantNumberButton extends RelativeLayout {
     private Context context;
@@ -29,7 +31,7 @@ public class ElegantNumberButton extends RelativeLayout {
 
     private LinearLayout mainLayout;
 
-    public Button addBtn, subtractBtn, addBtnView;
+    public MaterialButton addBtn, subtractBtn, addBtnView;
 
     public ElegantNumberButton(Context context) {
         super(context);
@@ -143,6 +145,7 @@ public class ElegantNumberButton extends RelativeLayout {
     }
 
     public void setNumber(String number) {
+        updateVisibility(Integer.parseInt(number));
         lastNumber = currentNumber;
         this.currentNumber = Integer.parseInt(number);
         if (this.currentNumber > finalNumber) {
@@ -174,7 +177,7 @@ public class ElegantNumberButton extends RelativeLayout {
         }
     }
 
-    public void setOnClickListener(OnClickListener onClickListener) {
+    public void setOnElegantClickListener(OnClickListener onClickListener) {
         this.mListener = onClickListener;
     }
 

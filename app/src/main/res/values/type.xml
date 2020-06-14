@@ -42,6 +42,7 @@
 
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/divider</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="TextAppearance.MyTheme.Body2" parent="TextAppearance.MaterialComponents.Body2">

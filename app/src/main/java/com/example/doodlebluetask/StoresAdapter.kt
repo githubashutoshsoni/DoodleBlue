@@ -1,15 +1,15 @@
 package com.example.doodlebluetask
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.button.MaterialButton
 import kotlinx.android.synthetic.main.item_stores_layout.view.*
 
 
-class StoresAdapter constructor(private val listOfStore: MutableList<Store>) :
+class StoresAdapter constructor(private var listOfStore: MutableList<Store>) :
     RecyclerView.Adapter<StoresAdapter.StoresViewHolder>() {
 
 
@@ -17,7 +17,8 @@ class StoresAdapter constructor(private val listOfStore: MutableList<Store>) :
 
         holder.foodName.text = listOfStore[position].foodName
         holder.foodDescription.text = listOfStore[position].foodDescription
-//        holder.count.text = listOfStore[position].count.toString()
+        holder.count.number= listOfStore[position].count.toString()
+        holder.count.setNumber(listOfStore[position].count.toString(), true)
     }
 
     private val TAG = StoresAdapter::class.java.simpleName
@@ -32,7 +33,14 @@ class StoresAdapter constructor(private val listOfStore: MutableList<Store>) :
     }
 
 
-    var onItemClick: ((String) -> Unit)? = null
+    fun setList(listOfStore: MutableList<Store>) {
+        this.listOfStore.clear()
+        this.listOfStore = listOfStore
+        notifyDataSetChanged()
+    }
+
+
+    var onItemClick: ((Store, String) -> Unit)? = null
 
     inner class StoresViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -43,6 +51,15 @@ class StoresAdapter constructor(private val listOfStore: MutableList<Store>) :
         init {
 
 
+            count.setOnElegantClickListener(object : ElegantNumberButton.OnClickListener {
+                override fun onClick(view: View?) {
+
+                    onItemClick?.invoke(listOfStore[adapterPosition], count.number)
+
+                }
+
+            })
+
         }
 
 
@@ -51,14 +68,6 @@ class StoresAdapter constructor(private val listOfStore: MutableList<Store>) :
     override fun getItemCount(): Int {
 
         return listOfStore.size
-    }
-
-
-    fun <T : RecyclerView.ViewHolder> T.listen(event: (position: Int, type: Int, viewId: Int) -> Unit): T {
-        itemView.setOnClickListener {
-            event.invoke(adapterPosition, itemViewType, it.id)
-        }
-        return this
     }
 
 

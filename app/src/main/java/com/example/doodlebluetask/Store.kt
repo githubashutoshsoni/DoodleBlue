@@ -10,4 +10,8 @@ data class Store(
     var foodName: String = "",
     var foodDescription: String = "",
     var count: Int = 0
-) : Parcelable
+) : Parcelable{
+
+
+
+}

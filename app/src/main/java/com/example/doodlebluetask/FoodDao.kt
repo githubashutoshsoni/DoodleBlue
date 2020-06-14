@@ -11,6 +11,10 @@ interface FoodDao {
     fun getAll(): LiveData<List<Store>>
 
 
+    @Query("update store set count=:count where foodName=:foodName")
+    fun update(foodName: String, count: Int): Int
+
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(score: Store)
 
