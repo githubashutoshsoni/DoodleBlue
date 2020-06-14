@@ -1,4 +1,4 @@
-package com.example.doodlebluetask
+package com.example.doodlebluetask.data
 
 import android.os.Parcelable
 import androidx.room.Entity

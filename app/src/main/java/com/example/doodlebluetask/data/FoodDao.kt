@@ -1,8 +1,7 @@
-package com.example.doodlebluetask
+package com.example.doodlebluetask.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import retrofit2.http.GET
 
 @Dao
 interface FoodDao {

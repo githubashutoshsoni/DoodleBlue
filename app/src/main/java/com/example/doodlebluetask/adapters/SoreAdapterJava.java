@@ -1,6 +1,5 @@
-package com.example.doodlebluetask;
+package com.example.doodlebluetask.adapters;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +7,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.doodlebluetask.R;
+import com.example.doodlebluetask.custom_view.ElegantNumberButton;
+import com.example.doodlebluetask.data.Store;
 
 import java.util.ArrayList;
 
@@ -19,7 +22,7 @@ public class SoreAdapterJava extends RecyclerView.Adapter<SoreAdapterJava.StoreV
 
     private boolean showFullList = true;
 
-    SoreAdapterJava(updateOrderItem updateOrderItem) {
+    public SoreAdapterJava(updateOrderItem updateOrderItem) {
         this.updateOrderItem = updateOrderItem;
     }
 

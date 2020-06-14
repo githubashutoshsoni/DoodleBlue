@@ -6,6 +6,9 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.doodlebluetask.adapters.SoreAdapterJava
+import com.example.doodlebluetask.data.Store
+import com.example.doodlebluetask.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_cart.*
 import java.util.ArrayList
 

@@ -9,10 +9,11 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.room.Room
+import com.example.doodlebluetask.adapters.SoreAdapterJava
+import com.example.doodlebluetask.data.Store
+import com.example.doodlebluetask.viewmodel.MainViewModel
 import com.google.android.material.appbar.AppBarLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.math.abs
@@ -91,14 +92,59 @@ class MainActivity : AppCompatActivity(), SoreAdapterJava.updateOrderItem {
     fun setDummyList() {
 
         listOfStores = ArrayList();
-        listOfStores.add(Store("Paneer Butter masala", "Amazing dish by amazing people", 2))
-        listOfStores.add(Store("Omelete", "A big amazing round omelete", 4))
-        listOfStores.add(Store("Fried Chicken", "Big big chicken all to devour", 10))
-        listOfStores.add(Store("French Fries", "Crispy water mouth with ketchup", 3))
-        listOfStores.add(Store("Paneer2 Butter masala", "Amazing dish by amazing people", 12))
-        listOfStores.add(Store("Omelete2", "A big amazing round omelete"))
-        listOfStores.add(Store("Fried Chicken2", "Big big chicken all to devour"))
-        listOfStores.add(Store("French Fries2", "Crispy water mouth with ketchup"))
+        listOfStores.add(
+            Store(
+                "Paneer Butter masala",
+                "Amazing dish by amazing people",
+                2
+            )
+        )
+        listOfStores.add(
+            Store(
+                "Omelete",
+                "A big amazing round omelete",
+                4
+            )
+        )
+        listOfStores.add(
+            Store(
+                "Fried Chicken",
+                "Big big chicken all to devour",
+                10
+            )
+        )
+        listOfStores.add(
+            Store(
+                "French Fries",
+                "Crispy water mouth with ketchup",
+                3
+            )
+        )
+        listOfStores.add(
+            Store(
+                "Paneer2 Butter masala",
+                "Amazing dish by amazing people",
+                12
+            )
+        )
+        listOfStores.add(
+            Store(
+                "Omelete2",
+                "A big amazing round omelete"
+            )
+        )
+        listOfStores.add(
+            Store(
+                "Fried Chicken2",
+                "Big big chicken all to devour"
+            )
+        )
+        listOfStores.add(
+            Store(
+                "French Fries2",
+                "Crispy water mouth with ketchup"
+            )
+        )
 
 
     }

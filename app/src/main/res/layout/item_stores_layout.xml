@@ -83,7 +83,7 @@
     </LinearLayout>
 
 
-    <com.example.doodlebluetask.ElegantNumberButton
+    <com.example.doodlebluetask.custom_view.ElegantNumberButton
         android:id="@+id/add_button"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
         app:backGroundColor="@color/white_50"
         app:initialNumber="0">
 
-    </com.example.doodlebluetask.ElegantNumberButton>
+    </com.example.doodlebluetask.custom_view.ElegantNumberButton>
 
 
 

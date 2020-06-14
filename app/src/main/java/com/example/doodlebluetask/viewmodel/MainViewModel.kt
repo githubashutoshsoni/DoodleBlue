@@ -1,10 +1,12 @@
-package com.example.doodlebluetask
+package com.example.doodlebluetask.viewmodel
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.room.Room
+import com.example.doodlebluetask.data.AppDatabase
+import com.example.doodlebluetask.data.Store
 
 class MainViewModel constructor(application: Application) : AndroidViewModel(application) {
 
