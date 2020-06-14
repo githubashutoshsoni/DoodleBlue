@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/n_d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/rounded_bg_selector"
+            android:text="N"
+            android:textAppearance="?attr/textAppearanceBody1">
+
+        </TextView>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_bg_selector"
+            android:text="D"
+            android:textAppearance="?attr/textAppearanceBody1">
+
+        </TextView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_toLeftOf="@id/add_button"
+        android:layout_toRightOf="@id/n_d"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/dish_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAppearance="?attr/textAppearanceBody1"
+            tools:text="Guec de la costa ">
+
+        </TextView>
+
+
+        <TextView
+            android:id="@+id/dish_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:textAppearance="?attr/textAppearanceBody1"
+            tools:text="tortella di doies la /corona sause ">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/dish_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_dollar"
+            android:text="7"
+            android:textColor="@color/accent"
+            android:textSize="18sp">
+
+        </TextView>
+
+    </LinearLayout>
+
+
+    <com.example.doodlebluetask.ElegantNumberButton
+        android:id="@+id/add_button"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:text="Add"
+        app:backGroundColor="@color/white_50"
+        app:initialNumber="0">
+
+    </com.example.doodlebluetask.ElegantNumberButton>
+
+
+
+
+
+<!--    <com.google.android.material.card.MaterialCardView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom|center"-->
+<!--        android:background="@android:color/white"-->
+<!--        android:fitsSystemWindows="true"-->
+<!--        app:cardCornerRadius="4dp"-->
+<!--        app:layout_collapseMode="parallax"-->
+<!--        app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fitsSystemWindows="true"-->
+<!--            android:orientation="vertical"-->
+<!--            android:padding="24dp">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fitsSystemWindows="true"-->
+<!--                android:gravity="center"-->
+<!--                android:text="Inka Restaurant"-->
+<!--                android:textAppearance="?attr/textAppearanceHeadline5">-->
+
+<!--            </TextView>-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:drawableStart="@android:drawable/star_big_off"-->
+<!--                android:drawablePadding="2dp"-->
+<!--                android:fitsSystemWindows="true"-->
+<!--                android:gravity="center"-->
+<!--                android:maxLines="1"-->
+<!--                android:text="@string/resturant_timing"-->
+<!--                android:textAppearance="?attr/textAppearanceBody1">-->
+
+<!--            </TextView>-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:drawableStart="@android:drawable/stat_sys_phone_call"-->
+<!--                android:drawablePadding="1dp"-->
+<!--                android:drawableTint="@color/black_900"-->
+<!--                android:fitsSystemWindows="true"-->
+<!--                android:gravity="center"-->
+<!--                android:maxLines="1"-->
+<!--                android:text="@string/reach_us"-->
+<!--                android:textAppearance="?attr/textAppearanceBody1">-->
+
+<!--            </TextView>-->
+
+
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:backgroundTint="@color/book_color"-->
+<!--                android:fitsSystemWindows="true"-->
+<!--                android:text="Book A Table">-->
+
+<!--            </com.google.android.material.button.MaterialButton>-->
+
+<!--        </LinearLayout>-->
+
+<!--    </com.google.android.material.card.MaterialCardView>-->
+
+</RelativeLayout>
